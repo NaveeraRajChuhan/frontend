@@ -726,6 +726,321 @@ td strong {
 }
 
 
+/* =====================================================
+   ORDER CRUD
+===================================================== */
+
+.order-header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.add-order-btn {
+  border: 0;
+  background: linear-gradient(135deg, #7667ff, #a68cff);
+  color: white;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.add-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(118, 103, 255, .25);
+}
+
+
+/* ACTION BUTTONS */
+
+.order-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.edit-order,
+.delete-order {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.edit-order {
+  background: #eeeaff;
+}
+
+.delete-order {
+  background: #ffe7eb;
+}
+
+.edit-order:hover,
+.delete-order:hover {
+  transform: translateY(-2px);
+}
+
+.edit-order:hover {
+  box-shadow: 0 5px 12px rgba(118, 103, 255, .2);
+}
+
+.delete-order:hover {
+  box-shadow: 0 5px 12px rgba(220, 90, 112, .2);
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.order-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 18, 27, .55);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  animation: modalFade .25s ease;
+}
+
+
+.order-modal {
+  width: 430px;
+  max-width: calc(100% - 30px);
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+
+  animation: modalSlide .3s ease;
+}
+
+
+.order-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+
+.order-modal-header h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #171827;
+}
+
+
+.order-modal-header p {
+  color: #9698a5;
+  font-size: 11px;
+}
+
+
+.close-modal {
+  border: 0;
+  background: #f4f4f7;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+  color: #777;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.close-modal:hover {
+  background: #ffe7eb;
+  color: #dc5a70;
+}
+
+
+/* FORM */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+
+.form-group label {
+  display: block;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  color: #4b4c59;
+
+  margin-bottom: 7px;
+}
+
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  border: 1px solid #e3e3e9;
+
+  background: #fafafd;
+
+  padding: 11px 12px;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 11px;
+
+  color: #33343f;
+
+  transition: .2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7667ff;
+
+  background: white;
+
+  box-shadow: 0 0 0 3px rgba(118, 103, 255, .08);
+}
+
+
+/* MODAL BUTTONS */
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+.cancel-modal,
+.save-order {
+  border: 0;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.cancel-modal {
+  background: #f1f1f4;
+  color: #666775;
+}
+
+
+.save-order {
+  background: linear-gradient(135deg, #7667ff, #a68cff);
+  color: white;
+}
+
+
+.cancel-modal:hover,
+.save-order:hover {
+  transform: translateY(-2px);
+}
+
+
+.save-order:hover {
+  box-shadow: 0 7px 18px rgba(118, 103, 255, .25);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes modalFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes modalSlide {
+
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .order-modal {
+    padding: 20px;
+  }
+
+  .order-header-buttons {
+    gap: 5px;
+  }
+
+  .add-order-btn {
+    padding: 8px 10px;
+  }
+
+}
+
+
+
+
+
+
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
