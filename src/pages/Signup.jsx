@@ -21,11 +21,25 @@ const Signup = () => {
     
     }
 
-    const handleSignup = (e) =>{
+    const handleSignup = async (e) =>{
         e.preventDefault();
         const { name, email, password } = signupInfo;
         if(!name || !email || !password){
             return handleError("All fields are required");
+        }
+        try{
+            const url = "https://backend-lrtb.vercel.app/"; 
+            const response = await fetch(url,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify(signupInfo) 
+            });
+            const result = await response.json();
+            console.log(result);
+        }catch(err){
+            handleError(err);
         }
 
     }
